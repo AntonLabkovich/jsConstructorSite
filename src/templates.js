@@ -7,7 +7,7 @@ function title(block){
 
 function text(block){
     const {styles} = block.options
-    return row(col(`<p>${block.value}</p>`),styles)
+    return row(col(`<p style="margin-bottom:0">${block.value}</p>`),styles)
 }
 
 function textColumn(block){
@@ -16,4 +16,10 @@ function textColumn(block){
     return row(`${html.join('')}`,styles)
 }
 
-export const templates = {title, text, textColumn}
+function image(block){
+    const {alt, styles, imageStyle} = block.options
+    const html = `<img src="${block.value}" alt="${alt}" style="${imageStyle}"/>`
+    return row(html,styles)
+}
+
+export const templates = {title, text, textColumn, image}
