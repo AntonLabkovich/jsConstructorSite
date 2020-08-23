@@ -25,6 +25,7 @@ function () {
     value: function render(model) {
       var _this = this;
 
+      this.$el.innerHTML = '';
       model.forEach(function (block) {
         _this.$el.insertAdjacentHTML('beforeend', block.toHTML());
       });

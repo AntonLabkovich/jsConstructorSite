@@ -60,7 +60,8 @@ function (_Block) {
     key: "toHTML",
     value: function toHTML() {
       var _this$options = this.options,
-          tag = _this$options.tag,
+          _this$options$tag = _this$options.tag,
+          tag = _this$options$tag === void 0 ? 'h2' : _this$options$tag,
           styles = _this$options.styles;
       return (0, _untils.row)((0, _untils.col)("<".concat(tag, ">").concat(this.value, "</").concat(tag, ">")), styles);
     }
