@@ -2,15 +2,9 @@
 
 var _model = require("./model");
 
+var _site = require("./classes/site");
+
 require("./styles/main.css");
 
-var site = document.querySelector('#site');
-
-_model.model.forEach(function (block) {
-  console.log(block);
-  site.insertAdjacentHTML('beforeend', block.toHTML()); // const generate = templates[block.type]
-  // if(generate){
-  //     const html = generate(block)
-  //    
-  // }
-});
+var site = new _site.Site('#site');
+site.render(_model.model);
